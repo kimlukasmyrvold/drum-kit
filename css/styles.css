@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Arvo");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
 body {
 	text-align: center;
@@ -6,10 +7,6 @@ body {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	margin: 0;
-}
-
-* {
 	margin: 0;
 }
 
@@ -57,34 +54,17 @@ h1 {
 	margin: 10% auto;
 }
 
-.game-over {
-	background-color: red;
-	opacity: 0.8;
-}
-
-.pressed {
-	box-shadow: 0 3px 4px 0 #DBEDF3;
-	opacity: 0.5;
-}
-
-.red {
-	color: red;
-}
-
 .drum {
-	outline: none;
 	border: 10px solid #404B69;
-	font-size: 5rem;
+	border-radius: 15px;
 	font-family: 'Arvo', cursive;
-	line-height: 2;
 	font-weight: 900;
+	font-size: 5rem;
+	line-height: 2;
 	color: #DA0463;
 	text-shadow: 3px 0 #DBEDF3;
-	border-radius: 15px;
-	display: inline-block;
 	width: 150px;
 	height: 150px;
-	text-align: center;
 	margin: 10px;
 	background-color: white;
 	background-repeat: no-repeat;
@@ -93,34 +73,29 @@ h1 {
 	cursor: pointer;
 }
 
+.pressed {
+	box-shadow: 0 3px 4px 0 #DBEDF3;
+	opacity: 0.5;
+}
 
 /* Footer styling */
 footer {
-	background: #2e3238ad;
+	background: #da04641a;
 	padding: 1em 0;
 }
 
-footer p.copyright {
-	padding: .5em 0 0;
-	font-size: 1.3rem;
-	color: #fff;
-}
-
 footer .github {
-	font-family: sans-serif;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	cursor: pointer;
+	text-decoration: underline;
+	color: #DBEDF3;
+	font-size: 1.55rem;
+	font-family: 'Nunito', sans-serif;
 }
 
 footer .github svg {
-	height: 50px;
-	fill: #fff;
-	margin-right: .5em;
-}
-
-footer .github a {
-	color: #DBEDF3;
-	font-size: 1.7rem;
+	fill: #DBEDF3;
+	height: 2em;
+	margin-right: .3em;
 }

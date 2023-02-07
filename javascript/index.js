@@ -1,12 +1,13 @@
 for (var i = 0; i < document.querySelectorAll('.drum').length; i++) {
     document.querySelectorAll('.drum')[i].addEventListener('click', function () {
         playSound(this.innerHTML);
+        playAnimation(this.innerHTML);
     });
 }
 
-document.addEventListener('keydown', function (event) {
-    var key = event.key.toLowerCase();
-    playSound(key);
+document.addEventListener('keydown', function (keyboard) {
+    playSound(keyboard.key.toLowerCase());
+    playAnimation(keyboard.key.toLowerCase());
 });
 
 function playSound(key) {
@@ -32,7 +33,13 @@ function playSound(key) {
         case 'l':
             new Audio('./sounds/kick-bass.mp3').play();
             break;
-        default:
-            break;
     }
+}
+
+function playAnimation(currentKey) {
+    document.querySelector('.' + currentKey).classList.add('pressed');
+
+    setTimeout(function () {
+        document.querySelector('.' + currentKey).classList.remove('pressed');
+    }, 100);
 }
