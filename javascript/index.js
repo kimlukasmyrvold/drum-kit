@@ -6,8 +6,11 @@ for (var i = 0; i < document.querySelectorAll('.drum').length; i++) {
 }
 
 document.addEventListener('keydown', function (keyboard) {
-    playSound(keyboard.key.toLowerCase());
-    playAnimation(keyboard.key.toLowerCase());
+    if (['KeyW','KeyA','KeyS','KeyD','KeyJ','KeyK','KeyL'].includes(keyboard.code)) {
+        playSound(keyboard.key.toLowerCase());
+        playAnimation(keyboard.key.toLowerCase());
+    }
+
 });
 
 function playSound(key) {
@@ -37,9 +40,9 @@ function playSound(key) {
 }
 
 function playAnimation(currentKey) {
-    document.querySelector('.' + currentKey).classList.add('pressed');
+    document.querySelector(`.${currentKey}`).classList.add('pressed');
 
     setTimeout(function () {
-        document.querySelector('.' + currentKey).classList.remove('pressed');
+        document.querySelector(`.${currentKey}`).classList.remove('pressed');
     }, 100);
 }

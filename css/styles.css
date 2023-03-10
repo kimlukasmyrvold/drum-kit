@@ -3,7 +3,7 @@
 
 body {
 	text-align: center;
-	background-color: #283149;
+	background-color: #02394A;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -19,7 +19,7 @@ h1 {
 	font-size: 5rem;
 	color: #DBEDF3;
 	font-family: "Arvo", cursive;
-	text-shadow: 3px 0 #DA0463;
+	text-shadow: 3px 0 #EE8434;
 }
 
 .w {
@@ -61,12 +61,12 @@ h1 {
 	font-weight: 900;
 	font-size: 5rem;
 	line-height: 2;
-	color: #DA0463;
+	color: #EE8434;
 	text-shadow: 3px 0 #DBEDF3;
 	width: 150px;
 	height: 150px;
 	margin: 10px;
-	background-color: white;
+	background-color: #03284E;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
@@ -80,8 +80,8 @@ h1 {
 
 /* Footer styling */
 footer {
-	background: #da04641a;
-	padding: 1em 0;
+	background: #03284E;
+	padding: .7em 0;
 }
 
 footer .github {
@@ -90,12 +90,12 @@ footer .github {
 	align-items: center;
 	text-decoration: underline;
 	color: #DBEDF3;
-	font-size: 1.55rem;
+	font-size: 1.3rem;
 	font-family: 'Nunito', sans-serif;
 }
 
 footer .github svg {
 	fill: #DBEDF3;
-	height: 2em;
-	margin-right: .3em;
+	height: 1.75em;
+	margin-right: .25em;
 }
