@@ -57,3 +57,11 @@ window.addEventListener('message', function (event) {
         event.source.postMessage(height, event.origin);
     }
 });
+
+// Listen for the window resize event
+window.addEventListener('resize', function () {
+    // Recalculate the height of the iframe's content
+    var height = document.body.scrollHeight;
+    // Send a message back to the parent document with the updated height value
+    window.parent.postMessage(height, '*');
+});
