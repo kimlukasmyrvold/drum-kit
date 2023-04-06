@@ -46,3 +46,16 @@ function playAnimation(currentKey) {
         document.querySelector(`.${currentKey}`).classList.remove('pressed');
     }, 100);
 }
+
+
+// Send the height of the website to external sources for use as an iframe
+function sendHeight() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({ height }, '*');
+}
+
+// Listen for resize events and send the height again
+window.addEventListener('resize', sendHeight);
+
+// Call sendHeight once on page load
+sendHeight();
