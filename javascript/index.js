@@ -48,15 +48,12 @@ function playAnimation(currentKey) {
 }
 
 
-// Send the height and width of the website to external sources for use as an iframe
-function sendSize() {
-    const height = document.body.scrollHeight;
-    const width = document.body.scrollWidth;
-    window.parent.postMessage({ height, width }, '*');
-}
-
-// Listen for resize events and send the size again
-window.addEventListener('resize', sendSize);
-
-// Call sendSize once on page load
-sendSize();
+// Listen for messages from the parent document
+window.addEventListener('message', function (event) {
+    // Check that the message is requesting the iframe's content height
+    if (event.data === 'getHeight') {
+        // Send a message back to the parent document with the iframe's content height
+        var height = document.body.scrollHeight;
+        event.source.postMessage(height, event.origin);
+    }
+});
