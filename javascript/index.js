@@ -57,12 +57,9 @@ function playAnimation(currentKey) {
 window.addEventListener('message', function (event) {
     // Check that the message is requesting the iframe's content height
     if (event.data === 'getHeight') {
-        // Check that the message came from the correct parent iframe
-        if (event.source === window.parent) {
-            // Send a message back to the parent document with the iframe's content height
-            var height = document.body.scrollHeight;
-            event.source.postMessage(height, event.origin);
-        }
+        // Send a message back to the parent document with the iframe's content height
+        var height = document.body.scrollHeight;
+        event.source.postMessage(height, event.origin);
     }
 });
 
@@ -70,7 +67,6 @@ window.addEventListener('message', function (event) {
 window.addEventListener('resize', function () {
     // Recalculate the height of the iframe's content
     var height = document.body.scrollHeight;
-    console.log('New scrollHeight:', height);
     // Send a message back to the parent document with the updated height value
     window.parent.postMessage(height, '*');
 });
