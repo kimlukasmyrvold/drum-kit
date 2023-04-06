@@ -70,6 +70,7 @@ window.addEventListener('message', function (event) {
 window.addEventListener('resize', function () {
     // Recalculate the height of the iframe's content
     var height = document.body.scrollHeight;
+    console.log('New scrollHeight:', height);
     // Send a message back to the parent document with the updated height value
     window.parent.postMessage(height, '*');
 });
