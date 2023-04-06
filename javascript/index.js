@@ -48,13 +48,21 @@ function playAnimation(currentKey) {
 }
 
 
+
+// *******************************************
+// *  Send height data to external websites  *
+// *******************************************
+
 // Listen for messages from the parent document
 window.addEventListener('message', function (event) {
     // Check that the message is requesting the iframe's content height
     if (event.data === 'getHeight') {
-        // Send a message back to the parent document with the iframe's content height
-        var height = document.body.scrollHeight;
-        event.source.postMessage(height, event.origin);
+        // Check that the message came from the correct parent iframe
+        if (event.source === window.parent) {
+            // Send a message back to the parent document with the iframe's content height
+            var height = document.body.scrollHeight;
+            event.source.postMessage(height, event.origin);
+        }
     }
 });
 
