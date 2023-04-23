@@ -8,6 +8,15 @@ body {
 	display: flex;
 	flex-direction: column;
 	margin: 0;
+	
+	/* removing scrollbar, but still retaining scroll */
+	-ms-overflow-style: none;
+    	scrollbar-width: none;
+    	overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+	display: none;
 }
 
 main {
